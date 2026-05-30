@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hipotez Sistemi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginPage" class="login-container">
+
+    <div class="login-box">
+      <h1>AI Hypothesis System</h1>
+      <p>Admin Girişi</p>
+
+      <input type="text" id="username" placeholder="Kullanıcı Adı">
+      <input type="password" id="password" placeholder="Şifre">
+
+      <button onclick="login()">Giriş Yap</button>
+
+      <div id="loginError" class="error"></div>
+    </div>
+
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="mainApp" style="display:none;">
+
+    <main class="app">
+
+      <section class="hero">
+        <h1>AI Destekli Veri Seti Hipotez Öneri Sistemi</h1>
+        <p>
+          Çalışma saati, devamsızlık ve sınav puanına göre
+          otomatik hipotez üretir.
+        </p>
+
+        <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+      </section>
+
+      <section class="panel">
+
+        <div class="card form-card">
+
+          <h2>Veri Girişi</h2>
+
+          <label>Çalışma Saati</label>
+          <input type="number" id="study" placeholder="Örn: 5">
+
+          <label>Devamsızlık Sayısı</label>
+          <input type="number" id="absence" placeholder="Örn: 2">
+
+          <label>Sınav Puanı</label>
+          <input type="number" id="score" placeholder="Örn: 75">
+
+          <button onclick="generateHypothesis()">
+            Hipotez Üret
+          </button>
+
+        </div>
+
+        <div class="card result-card">
+
+          <h2>AI Analiz Sonuçları</h2>
+
+          <div id="output" class="output">
+            Sonuçlar burada görüntülenecektir.
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="card info-card">
+
+        <h2>Sistem Workflow Yapısı</h2>
+
+        <div class="workflow">
+
+          <span>Webhook</span>
+          <span>→</span>
+
+          <span>Input Validation</span>
+          <span>→</span>
+
+          <span>Data Cleaning</span>
+          <span>→</span>
+
+          <span>Feature Analysis</span>
+          <span>→</span>
+
+          <span>Generate Hypotheses</span>
+          <span>→</span>
+
+          <span>AI Recommendation</span>
+          <span>→</span>
+
+          <span>Save Results</span>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
